@@ -19,13 +19,13 @@
     height: 1px;
     opacity: 0.7;
     background: #545454;
-    position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: 0;
+    position: absolute;
+    bottom: 20px;
   }
 }

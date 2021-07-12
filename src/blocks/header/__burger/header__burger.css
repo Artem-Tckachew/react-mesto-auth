@@ -11,7 +11,6 @@
     background: transparent url('../../../images/burger.svg') center no-repeat;
     background-size: 24px 21px;
     border: none;
-    position: absolute;
     transition: visibility 0s, opacity 0.3s;
     padding: 0;
     margin: 0;

@@ -80,6 +80,8 @@ function handleCardDelete(evt) {
     setIsEditAvatarPopupOpen(false);
     setSelectedCard(null);
     setIsDeleteCardPopupOpen(false);
+    setTooltipStatus();
+    setCardForDelete(undefined);
   }
 
 function handleUpdateUser(item){

@@ -9,13 +9,13 @@ const ICONS = {
 
 function InfoTooltip({ isOpen, onClose, status: {iconType, text} = {} }) {
   return (
-    <div className={`popup ${isOpen && "popup_is-opened"}`}>
+    <div className={`overlay ${isOpen && "overlay_active"}`}>
       <div className='popup__content'>
-        <form className='popup__form' noValidate>
+        <form className='popup popup_form' noValidate>
           <button type='button' className='popup__close' onClick={onClose}>
           </button>
           <div>
-            <img className='popup__icon' src={ICONS[iconType]}alt={text} />
+            <img className='popup__icon' src={ICONS[iconType]} alt={text} />
             <p className='popup__status-message'>{text}</p>
           </div>
         </form>
