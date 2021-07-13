@@ -1,5 +1,6 @@
 .header__burger {
   display: none;
+  grid-area: header__burger;
 
 }
 

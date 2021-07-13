@@ -2,16 +2,7 @@ import React from 'react';
 
 
 
-const PopupWithForm = ({
-  title,
-  name,
-  isOpen,
-  buttonText = "Сохранить",
-  onSubmit,
-  onClose,
-  children,
-  isDisabled = false,
-}) => {
+const PopupWithForm = ({title, name, isOpen, text, onSubmit, onClose, children, isDisabled = false }) => {
   React.useEffect(() => {
     if (!isOpen) return;
     const handleEscapeClose = (event) => {
@@ -38,7 +29,7 @@ const PopupWithForm = ({
           <legend className="popup__title">{title}</legend>
           {children}
           <button type="submit" className={`popup__button form__submit ${ isDisabled && "popup__button_disabled"
-            }`} disabled={isDisabled}>{buttonText}</button>
+            }`} disabled={isDisabled}>{text}</button>
         </fieldset>
         <button type="button" className="popup__close popup__close_profile" onClick={onClose} />
       </form>

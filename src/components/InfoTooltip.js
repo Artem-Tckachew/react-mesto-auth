@@ -10,7 +10,6 @@ const ICONS = {
 function InfoTooltip({ isOpen, onClose, status: {iconType, text} = {} }) {
   return (
     <div className={`overlay ${isOpen && "overlay_active"}`}>
-      <div className='popup__content'>
         <form className='popup popup_form' noValidate>
           <button type='button' className='popup__close' onClick={onClose}>
           </button>
@@ -20,7 +19,6 @@ function InfoTooltip({ isOpen, onClose, status: {iconType, text} = {} }) {
           </div>
         </form>
       </div>
-    </div>
   );
 }
 

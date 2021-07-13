@@ -1,13 +1,10 @@
 import {options} from './constants'
+import {getResponse} from './utils';
 class Api {
   constructor({ address, token, groupId }) {
     this._token = token;
     this._groupId = groupId;
     this._address = address;
-  }
-
-  response(res) {
-    return res.ok ? res.json() : Promise.reject(`Произошла ошибка со статус-кодом ${res.status}`)
   }
 
   getInitialCards() {
@@ -16,7 +13,7 @@ class Api {
         authorization: this._token
       }
     })
-      .then(this.response)
+      .then(getResponse)
   }
 
   addCard(card) {
@@ -31,7 +28,7 @@ class Api {
         link: card.link
       })
     })
-      .then(this.response)
+    .then(getResponse)
   }
 
   deleteCard(cardId) {
@@ -41,7 +38,7 @@ class Api {
         authorization: this._token,
       }
     })
-      .then(this.response)
+    .then(getResponse)
   }
 
   getUserData() {
@@ -50,7 +47,7 @@ class Api {
         authorization: this._token
       }
     })
-      .then(this.response)
+    .then(getResponse)
   }
 
   setUserData({name, about}) {
@@ -65,7 +62,7 @@ class Api {
         about
       })
     })
-      .then(this.response)
+    .then(getResponse)
   }
 
   setUserAvatar({avatar}) {
@@ -79,7 +76,7 @@ class Api {
         avatar
       })
     })
-      .then(this.response)
+    .then(getResponse)
   }
 
   changeLike(cardId, like) {
@@ -90,7 +87,7 @@ class Api {
         'Content-Type': 'application/json'
       }
     })
-      .then(this.response)
+    .then(getResponse)
   }
 
 }
